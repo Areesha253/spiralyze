@@ -1,0 +1,25 @@
+@use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables";
+.footer {
+  background-color: variables.$faded-elements-color;
+  padding: functions.rem(30) 0;
+  p,
+  .footer-link {
+    font-size: functions.rem(variables.$font-size-xxs);
+    color: #757575;
+    line-height: 24px;
+    text-decoration: none;
+  }
+  .footer-links {
+    text-align: right;
+  }
+}
+@include mixins.responsive("lg-devices") {
+  .footer {
+    text-align: center;
+    .footer-links {
+      text-align: center;
+    }
+  }
+}

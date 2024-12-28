@@ -1,0 +1,100 @@
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+.organize-section {
+  padding: functions.rem(60) 0;
+  h2 {
+    font-family: "Montserrat-Bold";
+    font-weight: 900;
+    line-height: 46px;
+    color: variables.$main-text-color;
+    span {
+      margin-right: 5px;
+      -webkit-text-stroke: 1px variables.$main-text-color;
+      color: transparent;
+    }
+  }
+  .horizontal-line {
+    border: 1px solid variables.$faded-elements-color;
+    width: 100%;
+  }
+  .italic-text {
+    font-size: functions.rem(variables.$font-size-xs);
+    font-style: italic;
+    line-height: 28px;
+    font-size: 400;
+    span {
+      font-weight: 900;
+      color: variables.$main-text-color;
+      margin-right: 5px;
+    }
+  }
+  p {
+    font-weight: 400;
+    line-height: 24px;
+    color: variables.$main-text-color;
+  }
+  .tooltip-box {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96px;
+    text-align: center;
+    gap: 8px;
+    border: 2px solid variables.$interactive-elements-color;
+    border-radius: 4px;
+    padding: functions.rem(20);
+    position: relative;
+    cursor: pointer;
+    &:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease, visibility 0s;
+    }
+    &:hover .tooltip-tag {
+      color: variables.$interactive-elements-color;
+    }
+    &:hover img {
+      visibility: visible;
+    }
+    .tooltip-tag {
+      color: variables.$main-text-color;
+      font-size: functions.rem(variables.$font-size-xs);
+      line-height: 28px;
+      font-weight: 600;
+    }
+    img {
+      visibility: hidden;
+    }
+    .tooltip-content {
+      visibility: hidden;
+      width: calc(100% - 30px);
+      background-color: variables.$tooltip-color;
+      color: variables.$body-primary-color;
+      text-align: left;
+      border-radius: 8px;
+      padding: functions.rem(15);
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.9s ease, visibility 0s 0.8s;
+      z-index: 10;
+      font-size: functions.rem(variables.$font-size-xxs);
+      line-height: 20px;
+      font-weight: 300;
+      box-shadow: 0px 4px 8px 0px #00000014;
+      &::before {
+        content: "";
+        background: url(/dist/img/tooltip-pointer.png) no-repeat;
+        position: absolute;
+        top: -8px;
+        left: 47%;
+        width: 22px;
+        height: 9px;
+      }
+    }
+  }
+}

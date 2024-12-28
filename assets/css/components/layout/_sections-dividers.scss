@@ -1,0 +1,21 @@
+@use "abstracts/mixins";
+.curvy-divider-lg-grey,
+.curvy-divider-sm-grey {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  left: 0;
+}
+.curvy-divider-sm-white,
+.curvy-divider-lg-white {
+  position: absolute;
+  bottom: -3px;
+  width: 100%;
+  left: 0;
+}
+@include mixins.responsive("md-devices") {
+  .curvy-divider-lg-grey,
+  .curvy-divider-lg-white {
+    width: auto;
+  }
+}

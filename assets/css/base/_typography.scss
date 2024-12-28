@@ -1,0 +1,67 @@
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@font-face {
+  font-family: "Montserrat";
+  src: url(/assets/font/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(/assets/font/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: "Montserrat-ThinItalic";
+  src: url(/assets/font/Montserrat-ThinItalic.ttf);
+}
+html {
+  font-size: functions.rem(variables.$font-size-base);
+
+  h1 {
+    font-size: functions.rem(variables.$font-size-xl);
+    line-height: 72px;
+  }
+  h2 {
+    font-size: functions.rem(variables.$font-size-lg);
+    font-weight: 900;
+  }
+  h3 {
+    font-size: functions.rem(variables.$font-size-md);
+  }
+  h4 {
+    font-size: functions.rem(variables.$font-size-sm);
+    font-weight: 600;
+  }
+  h5 {
+    font-size: functions.rem(variables.$font-size-xs);
+    font-weight: 400;
+    margin-bottom: functions.rem(20);
+  }
+  p {
+    font-size: functions.rem(variables.$font-size-xxs);
+  }
+}
+@include mixins.responsive("lg-devices") {
+  html {
+    font-size: functions.rem(18);
+  }
+}
+@include mixins.responsive("md-devices") {
+  html {
+    font-size: functions.rem(16);
+    h5 {
+      font-size: functions.rem(14);
+    }
+  }
+}
+@include mixins.responsive("sm-devices") {
+  html {
+    font-size: functions.rem(14);
+    h1 {
+      font-size: functions.rem(36);
+      line-height: 44px;
+    }
+    h2 {
+      font-size: functions.rem(24);
+    }
+  }
+}
