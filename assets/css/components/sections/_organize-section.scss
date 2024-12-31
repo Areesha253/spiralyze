@@ -44,7 +44,7 @@
     gap: 8px;
     border: 2px solid variables.$interactive-elements-color;
     border-radius: 4px;
-    padding: functions.rem(20);
+    padding: functions.rem(30);
     position: relative;
     cursor: pointer;
     &:hover .tooltip-content {
@@ -55,17 +55,21 @@
     &:hover .tooltip-tag {
       color: variables.$interactive-elements-color;
     }
-    &:hover img {
-      visibility: visible;
+    &:hover .tooltip-tag::after {
+      opacity: 1;
     }
     .tooltip-tag {
       color: variables.$main-text-color;
       font-size: functions.rem(variables.$font-size-xs);
       line-height: 28px;
       font-weight: 600;
-    }
-    img {
-      visibility: hidden;
+      &::after {
+        content: url(/dist/img/mdi-info.png);
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        margin-left: functions.rem(8);
+      }
     }
     .tooltip-content {
       visibility: hidden;
