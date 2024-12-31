@@ -1,0 +1,134 @@
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/variables";
+@use "base/typography";
+
+#contact-form {
+  .input-field {
+    position: relative;
+    input {
+      border-radius: 2px;
+      border: 1px solid variables.$primary-text-opacity-70;
+      padding: 12px;
+      background: transparent;
+      font-size: 16px;
+      color: variables.$body-primary-color;
+      width: 100%;
+      &:focus-visible {
+        outline: none;
+      }
+      &:active,
+      &:focus {
+        border: 1px solid variables.$body-primary-color;
+        outline: none;
+        color: variables.$body-primary-color;
+      }
+      &:focus + label,
+      &:not(:placeholder-shown) + label {
+        background-color: #2d7466;
+        padding: 0 6px;
+        top: 0;
+        font-size: 13px;
+        line-height: 13px;
+        color: variables.$body-primary-color;
+      }
+    }
+    label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: functions.rem(variables.$font-size-base);
+      color: variables.$primary-text-opacity-70;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+    .empty-field-warning {
+      color: variables.$body-primary-color;
+      font-size: 13px;
+      line-height: 20px;
+      padding: 10px;
+      position: absolute;
+      left: 0;
+      top: 120%;
+      width: 100%;
+      z-index: 10;
+      background: variables.$error-warning-color;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px 0px #00000014;
+      display: none;
+      &::before {
+        content: "";
+        background: url(/dist/img/red-pointer.png) no-repeat;
+        position: absolute;
+        top: -8px;
+        left: 47%;
+        width: 22px;
+        height: 9px;
+      }
+    }
+  }
+  select {
+    border-radius: 2px;
+    border: 1px solid variables.$primary-text-opacity-70;
+    padding: 12px;
+    color: variables.$primary-text-opacity-70;
+    appearance: none;
+    background: url(/dist/img/dropdown-arrow.png) no-repeat;
+    background-position: right 10px center;
+    width: 100%;
+    cursor: pointer;
+    &:focus,
+    &:active {
+      color: variables.$body-primary-color;
+      outline: none;
+    }
+    option {
+      color: variables.$main-text-color;
+    }
+  }
+  .submit-form-btn {
+    text-align: center;
+    box-shadow: 0px 4px 6px 0px #00000014;
+    background-color: variables.$interactive-elements-color;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    width: 221px;
+    margin: 40px auto 0;
+    cursor: pointer;
+    gap: 10px;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
+    &:hover {
+      box-shadow: 0px 8px 6px 0px #00000014;
+      transform: translateY(-3%);
+    }
+    &:active {
+      background-color: #35bb9c;
+      box-shadow: 0px 4px 6px 0px #00000014;
+      transform: translateY(0);
+      outline: none;
+    }
+    span {
+      line-height: 21.94px;
+      font-weight: 600;
+      color: variables.$body-primary-color;
+      font-size: functions.rem(18);
+    }
+  }
+  &.error input {
+    border: 1px solid variables.$error-warning-color;
+  }
+  &.error label {
+    color: variables.$error-warning-color;
+  }
+  &.error input:focus + label,
+  &.error input:not(:placeholder-shown) + label {
+    background-color: #2d7466;
+    color: variables.$error-warning-color;
+  }
+}
