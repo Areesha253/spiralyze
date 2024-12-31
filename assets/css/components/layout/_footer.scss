@@ -8,18 +8,27 @@
   .footer-link {
     font-size: functions.rem(variables.$font-size-xxs);
     color: #757575;
-    line-height: 24px;
+    line-height: 12px;
     text-decoration: none;
   }
   .footer-links {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    li {
+      &:not(:last-child) {
+        padding-right: functions.rem(10);
+        border-right: 1px solid #757575;
+      }
+    }
   }
 }
 @include mixins.responsive("lg-devices") {
   .footer {
     text-align: center;
     .footer-links {
-      text-align: center;
+      justify-content: center;
     }
   }
 }
