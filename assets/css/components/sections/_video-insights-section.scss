@@ -9,16 +9,10 @@
   background-size: 56% 100%, 58% 100%;
   .video-description {
     padding: functions.rem(60) functions.rem(86);
-    h2 {
-      font-family: "Montserrat-Bold";
-      font-weight: 900;
-      line-height: 52px;
-      color: variables.$body-primary-color;
+    .transparent-text {
       margin-bottom: functions.rem(20);
       span {
-        margin-right: 5px;
-        -webkit-text-stroke: 1px variables.$body-primary-color;
-        color: transparent;
+        margin-left: 10px;
       }
     }
     .checkmark-with-description {
@@ -119,11 +113,6 @@
 @include mixins.responsive("sm-devices") {
   .video-insights-section {
     background-size: 100% 62%, 100% 64%;
-    .video-description {
-      h2 {
-        font-size: 36px;
-      }
-    }
     .video-thumbnail {
       .outer-circle {
         width: 128px;

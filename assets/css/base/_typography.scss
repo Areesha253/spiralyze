@@ -18,7 +18,6 @@ html {
 
   h1 {
     font-size: functions.rem(variables.$font-size-xl);
-    line-height: 72px;
   }
   h2 {
     font-size: functions.rem(variables.$font-size-lg);
@@ -56,12 +55,5 @@ html {
 @include mixins.responsive("sm-devices") {
   html {
     font-size: functions.rem(14);
-    h1 {
-      font-size: functions.rem(36);
-      line-height: 44px;
-    }
-    h2 {
-      font-size: functions.rem(24);
-    }
   }
 }

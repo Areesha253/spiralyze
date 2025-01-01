@@ -1,0 +1,60 @@
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+.transparent-text {
+  font-family: "Montserrat-Bold";
+  font-weight: 900;
+  line-height: 52px;
+  -webkit-text-stroke: 1px variables.$body-primary-color;
+  color: transparent;
+  span.filled {
+    color: variables.$body-primary-color;
+  }
+  &.dark {
+    color: transparent;
+    -webkit-text-stroke: 1px variables.$main-text-color;
+    span.filled {
+      color: variables.$main-text-color;
+    }
+  }
+}
+.with-line {
+  position: relative;
+  display: block;
+  > span {
+    background-color: variables.$body-secondary-color;
+    position: relative;
+    z-index: 1;
+    padding-right: functions.rem(25);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background: variables.$faded-elements-color;
+    z-index: 0;
+  }
+}
+
+@include mixins.responsive("lg-devices") {
+  .with-line {
+    &::after {
+      top: auto;
+      transform: none;
+      bottom: functions.rem(25);
+    }
+  }
+}
+@include mixins.responsive("sm-devices") {
+  .with-line {
+    > span {
+      background-color: variables.$body-primary-color;
+      padding-right: functions.rem(10);
+    }
+  }
+}

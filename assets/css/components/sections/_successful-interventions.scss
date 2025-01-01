@@ -4,21 +4,8 @@
 .successful-interventions {
   background: variables.$body-secondary-color;
   padding: functions.rem(80) 0;
-  h2 {
-    font-family: "Montserrat-Bold";
-    font-weight: 900;
-    line-height: 46px;
-    color: variables.$main-text-color;
+  .transparent-text {
     margin: functions.rem(20) 0;
-    span {
-      margin-right: 5px;
-      -webkit-text-stroke: 1px variables.$main-text-color;
-      color: transparent;
-    }
-  }
-  .horizontal-line {
-    border: 1px solid variables.$faded-elements-color;
-    width: 100%;
   }
   p {
     font-weight: 400;

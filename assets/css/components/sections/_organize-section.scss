@@ -3,20 +3,10 @@
 @use "abstracts/mixins";
 .organize-section {
   padding: functions.rem(60) 0;
-  h2 {
-    font-family: "Montserrat-Bold";
-    font-weight: 900;
-    line-height: 46px;
-    color: variables.$main-text-color;
-    span {
-      margin-right: 5px;
-      -webkit-text-stroke: 1px variables.$main-text-color;
-      color: transparent;
+  .with-line {
+    > span {
+      background: variables.$body-primary-color;
     }
-  }
-  .horizontal-line {
-    border: 1px solid variables.$faded-elements-color;
-    width: 100%;
   }
   .italic-text {
     font-size: functions.rem(variables.$font-size-xs);

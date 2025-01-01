@@ -9,15 +9,9 @@
   .home {
     padding: functions.rem(60) 0;
     .home-left {
-      h1 {
-        font-family: "Montserrat-bold";
+      .transparent-text {
         margin-bottom: functions.rem(20);
-        font-weight: 900;
-        -webkit-text-stroke: 1px variables.$body-primary-color;
-        color: transparent;
-        span {
-          color: variables.$body-primary-color;
-        }
+        line-height: 72px;
       }
       h5 {
         color: variables.$secondary-text-opacity-80;
