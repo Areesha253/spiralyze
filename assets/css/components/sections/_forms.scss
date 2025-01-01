@@ -120,14 +120,14 @@
       font-size: functions.rem(18);
     }
   }
-  &.error input {
+  .input-field.error input {
     border: 1px solid variables.$error-warning-color;
   }
-  &.error label {
+  .input-field.error label {
     color: variables.$error-warning-color;
   }
-  &.error input:focus + label,
-  &.error input:not(:placeholder-shown) + label {
+  .input-field.error input:focus + label,
+  .input-field.error input:not(:placeholder-shown) + label {
     background-color: #2d7466;
     color: variables.$error-warning-color;
   }
