@@ -60,10 +60,9 @@
           color: variables.$body-primary-color;
         }
       }
-      .nav-link-divider {
-        border: 1px solid variables.$primary-text-opacity-70;
-      }
       .call-now-link {
+        padding-left: functions.rem(30);
+        border-left: 1px solid variables.$secondary-text-opacity-80;
         text-decoration: none;
         font-size: functions.rem(variables.$font-size-xxs);
         font-weight: 700;
@@ -82,11 +81,12 @@
       .navbar-ul {
         flex-wrap: wrap;
         justify-content: end;
-        li:nth-child(4) {
-          display: none;
-        }
         .navbar-link {
           line-height: 34px;
+        }
+        .call-now-link {
+          border-left: none;
+          padding-left: 0;
         }
       }
     }
