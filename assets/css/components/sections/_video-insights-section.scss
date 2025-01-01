@@ -37,100 +37,107 @@
       }
     }
   }
-  .video-thumbnail-img {
-    width: 100%;
-    height: 100%;
+  .video-thumbnail {
     position: relative;
-    object-fit: cover;
-    z-index: -1;
-  }
-  .video-play-btn-border {
-    position: absolute;
-    top: calc(50% - 97px);
-    right: calc(10% + 25px);
-    border: 2px solid #ffffff4d;
-    padding: 98px;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
-    z-index: 0;
-    &:hover {
-      transform: scale(1.14);
+    height: 100%;
+    .video-thumbnail-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: -1;
     }
-  }
-  .video-play-btn {
-    position: absolute;
-    right: calc(10% + 43px);
-    top: calc(50% - 78px);
-    padding: 55px 59px;
-    background-color: variables.$highlighted-elements-color;
-    border: 2px solid variables.$body-primary-color;
-    border-radius: 50%;
-    z-index: 1;
-    &:hover + .video-play-btn-border {
-      transform: scale(1.14);
+    .outer-circle {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border: 2px solid #ffffff4d;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover,
+      &:active {
+        width: 228px;
+        height: 228px;
+      }
+      .inner-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 154px;
+        height: 154px;
+        background-color: variables.$highlighted-elements-color;
+        border: 2px solid variables.$body-primary-color;
+        border-radius: 50%;
+      }
+    }
+    .logo-over-video-thumbnail {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
     }
   }
 }
 @include mixins.responsive("lg-devices") {
   .video-insights-section {
     background: url(/dist/img/sm-green-bg.png) no-repeat, url(/dist/img/sm-transparent-bg.png) no-repeat;
-    background-size: 100% 56%, 100% 58%;
+    background-size: 100% 52%, 100% 54%;
     .video-description {
-      padding: functions.rem(40) functions.rem(60);
+      padding: functions.rem(60) functions.rem(40);
       h2 {
         text-align: center;
       }
     }
-    .video-play-btn-border {
-      top: 49%;
-      right: 36%;
-    }
-    .video-play-btn {
-      top: 50%;
-      right: 38%;
+    .video-thumbnail {
+      .outer-circle {
+        margin: functions.rem(55) auto 0;
+      }
+      .logo-over-video-thumbnail {
+        right: 0;
+        left: 0;
+        margin: auto;
+      }
     }
   }
 }
 @include mixins.responsive("md-devices") {
   .video-insights-section {
     .video-description {
-      padding: functions.rem(50);
+      padding: functions.rem(60) functions.rem(40) 0;
+    }
+    .video-thumbnail {
+      .outer-circle {
+        margin: functions.rem(12) auto 0;
+      }
     }
   }
 }
 @include mixins.responsive("sm-devices") {
   .video-insights-section {
-    background-size: 100% 56%, 100% 58%;
+    background-size: 100% 62%, 100% 64%;
     .video-description {
-      padding: functions.rem(80) functions.rem(10) functions.rem(40);
       h2 {
         font-size: 36px;
       }
     }
-    .video-play-btn-border {
-      padding: 62px;
-      top: 45%;
-      right: 35%;
-    }
-    .video-play-btn {
-      padding: 28px 31px;
-      top: 47%;
-      right: 38%;
+    .video-thumbnail {
+      .outer-circle {
+        width: 128px;
+        height: 128px;
+        .inner-circle {
+          width: 99px;
+          height: 99px;
+        }
+      }
     }
   }
 }
 @include mixins.responsive("xs-devices") {
   .video-insights-section {
     background-size: 100% 76%, 100% 78%;
-    .video-play-btn-border {
-      padding: 62px;
-      top: 70%;
-      right: 30%;
-    }
-    .video-play-btn {
-      padding: 28px 31px;
-      top: 71%;
-      right: 33%;
-    }
   }
 }
