@@ -42,7 +42,6 @@
       }
     }
   }
-
   .navbar-list-items {
     justify-content: end;
     .navbar-ul {
@@ -75,6 +74,7 @@
     }
   }
 }
+
 @include mixins.responsive("lg-devices") {
   .navbar-wrapper {
     .navbar-list-items {

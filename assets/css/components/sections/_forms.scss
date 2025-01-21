@@ -67,6 +67,17 @@
         height: 9px;
       }
     }
+    &.error input {
+      border: 1px solid variables.$error-warning-color;
+    }
+    &.error label {
+      color: variables.$error-warning-color;
+    }
+    &.error input:focus + label,
+    &.error input:not(:placeholder-shown) + label {
+      background-color: #2d7466;
+      color: variables.$error-warning-color;
+    }
   }
   select {
     border-radius: 2px;
@@ -119,16 +130,5 @@
       color: variables.$body-primary-color;
       font-size: functions.rem(18);
     }
-  }
-  .input-field.error input {
-    border: 1px solid variables.$error-warning-color;
-  }
-  .input-field.error label {
-    color: variables.$error-warning-color;
-  }
-  .input-field.error input:focus + label,
-  .input-field.error input:not(:placeholder-shown) + label {
-    background-color: #2d7466;
-    color: variables.$error-warning-color;
   }
 }

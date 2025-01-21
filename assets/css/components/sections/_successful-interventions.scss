@@ -1,6 +1,7 @@
 @use "abstracts/functions";
 @use "abstracts/variables";
 @use "abstracts/mixins";
+
 .successful-interventions {
   background: variables.$body-secondary-color;
   padding: functions.rem(80) 0;

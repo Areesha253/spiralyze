@@ -50,7 +50,6 @@
 }
 @include mixins.responsive("lg-devices") {
   .navigation-home {
-    background-position: 80%;
     .home {
       text-align: center;
       .home-left {
@@ -64,11 +63,9 @@
     }
   }
 }
-
 @include mixins.responsive("md-devices") {
   .navigation-home {
     .home {
-      padding: functions.rem(40) 0 functions.rem(200);
       .home-left {
         h1 {
           font-size: functions.rem(42);
@@ -78,8 +75,4 @@
   }
 }
 @include mixins.responsive("sm-devices") {
-  .navigation-home {
-    background: linear-gradient(to bottom, rgba(27, 72, 53, 0.8), rgba(27, 72, 53, 1)), url("/dist/img/young-group-of-people.png") no-repeat;
-    background-position: top right;
-  }
 }

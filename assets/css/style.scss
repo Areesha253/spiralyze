@@ -1,10 +1,11 @@
+@use "base/reset";
+
 @use "abstracts/variables";
 @use "abstracts/mixins";
 @use "abstracts/functions";
 
 @use "base/typography";
 @use "base/custom-reset";
-@use "base/reset";
 @use "base/global";
 
 @use "components/index";

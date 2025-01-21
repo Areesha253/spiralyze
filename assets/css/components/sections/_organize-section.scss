@@ -1,10 +1,11 @@
 @use "abstracts/functions";
 @use "abstracts/variables";
 @use "abstracts/mixins";
+
 .organize-section {
   padding: functions.rem(60) 0;
   .with-line {
-    > span {
+    span {
       background: variables.$body-primary-color;
     }
   }
@@ -14,6 +15,7 @@
     line-height: 28px;
     font-size: 400;
     span {
+      font-family: "Montserrat-Bold";
       font-weight: 900;
       color: variables.$main-text-color;
       margin-right: 5px;
@@ -49,10 +51,11 @@
       opacity: 1;
     }
     .tooltip-tag {
+      font-family: "Montserrat-Bold";
+      font-weight: 900;
       color: variables.$main-text-color;
       font-size: functions.rem(variables.$font-size-xs);
       line-height: 28px;
-      font-weight: 600;
       &::after {
         content: url(/dist/img/mdi-info.png);
         position: absolute;
@@ -80,6 +83,7 @@
       line-height: 20px;
       font-weight: 300;
       box-shadow: 0px 4px 8px 0px #00000014;
+      pointer-events: none;
       &::before {
         content: "";
         background: url(/dist/img/tooltip-pointer.png) no-repeat;

@@ -10,8 +10,8 @@
   </head>
   <body>
     <div class="navigation-home" id="navigation-home">
-      <div class="container">
-        <nav class="navbar navbar-wrapper navbar-expand-sm" id="navbar-wrapper">
+      <nav class="navbar navbar-wrapper navbar-expand-sm" id="navbar-wrapper">
+        <div class="container">
           <a class="navbar-logo" href="javascript:void(0)">
             <img src="dist/img/main-logo.png" alt="get-an-intervention-logo" />
           </a>
@@ -41,8 +41,10 @@
               </li>
             </ul>
           </div>
-        </nav>
-        <div class="home" id="home">
+        </div>
+      </nav>
+      <div class="home" id="home">
+        <div class="container">
           <div class="row align-items-center gy-5">
             <div class="col-12 col-lg-6">
               <div class="home-left">
@@ -57,28 +59,28 @@
                   <div class="row g-3">
                     <div class="col-lg-6">
                       <div class="input-field">
-                        <input type="text" id="user-first-name" name="firstName" placeholder=" " />
+                        <input class="data-input" type="text" name="firstName" placeholder=" " />
                         <label>First Name</label>
                         <span class="empty-field-warning">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="input-field">
-                        <input type="text" id="user-last-name" name="lastName" placeholder=" " />
+                        <input class="data-input" type="text" name="lastName" placeholder=" " />
                         <label>Last Name</label>
                         <span class="empty-field-warning">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="input-field">
-                        <input type="text" id="user-business-email" name="businessEmail" placeholder=" " />
+                        <input class="data-input" type="text" name="businessEmail" placeholder=" " />
                         <label>Business Email</label>
                         <span class="empty-field-warning">This field can’t be empty. Please fill it in.</span>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="input-field">
-                        <input type="text" id="user-company" name="company" placeholder=" " />
+                        <input class="data-input" type="text" name="company" placeholder=" " />
                         <label>Company</label>
                         <span class="empty-field-warning">This field can’t be empty. Please fill it in.</span>
                       </div>
@@ -102,11 +104,9 @@
             </div>
           </div>
         </div>
-        <img src="dist/img/grey-lg-curve.png" class="curvy-divider-lg-grey d-none d-sm-block" alt="" />
-        <img src="dist/img/white-lg-curve.png" class="curvy-divider-lg-white d-none d-sm-block" alt="" />
-        <img src="dist/img/grey-sm-curve.png" class="curvy-divider-sm-grey d-block d-sm-none" alt="" />
-        <img src="dist/img/white-sm-curve.png" class="curvy-divider-sm-white d-block d-sm-none" alt="" />
       </div>
+      <img src="dist/img/curve-2.svg" class="overlay-1" alt="" />
+      <img src="dist/img/curve-hone.svg" class="overlay-2" alt="" />
     </div>
     <section class="successful-interventions" id="successful-interventions">
       <div class="container">
@@ -264,10 +264,10 @@
         </div>
       </div>
     </section>
-    <section class="video-insights-section" id="video-insights-section">
+    <section class="video-section">
       <div class="container-fluid p-0">
-        <div class="row">
-          <div class="col-12 col-lg-6">
+        <div class="video-sec-wrapper">
+          <div class="video-sec-left">
             <div class="video-description">
               <h2 class="transparent-text">WATCH<span class="filled">THE VIDEO</span></h2>
               <div class="checkmark-with-description">
@@ -293,7 +293,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-6">
+          <div class="video-sec-right">
             <div class="video-thumbnail">
               <img src="dist/img/young-group-of-people.png" alt="young-group-of-people" class="video-thumbnail-img" />
               <a href="https://youtu.be/PAwkPlynsM4?si=9SkWha-IHqhCuX1P" data-fancybox="video" data-caption="My Local Video" class="outer-circle">

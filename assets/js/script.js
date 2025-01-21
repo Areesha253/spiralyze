@@ -13,48 +13,28 @@ $("#contact-form").on("submit", function (e) {
   $(".empty-field-warning").hide();
   $(".input-field").removeClass("error");
 
-  const firstName = $("#user-first-name").val();
-  const lastName = $("#user-last-name").val();
-  const businessEmail = $("#user-business-email").val();
-  const company = $("#user-company").val();
-
   let formValid = true;
-  const fields = [
-    {
-      id: "#user-first-name",
-      value: firstName,
-    },
-    {
-      id: "#user-last-name",
-      value: lastName,
-    },
-    {
-      id: "#user-business-email",
-      value: businessEmail,
-    },
-    {
-      id: "#user-company",
-      value: company,
-    },
-  ];
 
-  for (const field of fields) {
-    if (!field.value) {
+  $(".data-input").each(function () {
+    const value = $(this).val();
+
+    if (!value) {
       formValid = false;
-      $(field.id).siblings(".empty-field-warning").show();
-      $(field.id).closest(".input-field").addClass("error");
-      break;
+      $(this).siblings(".empty-field-warning").show();
+      $(this).closest(".input-field").addClass("error");
+      $(this).trigger("focus");
+      return false;
     }
-  }
-  if (formValid) {
-    console.log(firstName);
-    console.log(lastName);
-    console.log(businessEmail);
-    console.log(company);
-    $("input").val("");
-  }
-  $("input").on("input", function () {
-    $(this).siblings(".empty-field-warning").hide();
-    $(this).val() && $(this).closest(".input-field").removeClass("error");
   });
+
+  if (formValid) {
+    $(".data-input").val("");
+  }
+});
+
+$(".data-input").on("input", function () {
+  if ($(this).val()) {
+    $(this).siblings(".empty-field-warning").hide();
+    $(this).closest(".input-field").removeClass("error");
+  }
 });

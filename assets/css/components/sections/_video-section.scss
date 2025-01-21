@@ -1,0 +1,218 @@
+@use "abstracts/functions";
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+.video-section {
+  .video-sec-wrapper {
+    display: flex;
+    .video-sec-left {
+      display: flex;
+      align-items: center;
+      width: 48%;
+      position: relative;
+      background: linear-gradient(180deg, #305d52 0%, #153f38 100%);
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 110%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center right;
+        pointer-events: none;
+      }
+      &::before {
+        background-image: url("/assets/img/watchvid-design-1.svg");
+        z-index: 2;
+      }
+      &::after {
+        background-image: url("/assets/img/watchvid-design-2.svg");
+        z-index: 1;
+        width: 115%;
+      }
+      .video-description {
+        display: flex;
+        flex-direction: column;
+        z-index: 36;
+        padding: functions.rem(60) functions.rem(86);
+        .transparent-text {
+          margin-bottom: functions.rem(20);
+          span {
+            margin-left: 10px;
+          }
+        }
+        .checkmark-with-description {
+          display: flex;
+          gap: 15px;
+          align-items: baseline;
+          .description-text {
+            h4 {
+              line-height: 32px;
+              margin-bottom: functions.rem(15);
+              color: variables.$body-primary-color;
+            }
+            h5 {
+              line-height: 28px;
+              color: variables.$secondary-text-opacity-80;
+            }
+          }
+        }
+      }
+    }
+    .video-sec-right {
+      position: relative;
+      width: 52%;
+      img {
+        &.video-thumbnail-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        &.logo-over-video-thumbnail {
+          position: absolute;
+          right: functions.rem(36);
+          bottom: functions.rem(36);
+          z-index: 2;
+        }
+      }
+      .video-thumbnail {
+        position: relative;
+        height: 100%;
+        .outer-circle {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          border: 2px solid #ffffff4d;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover,
+          &:active {
+            width: 228px;
+            height: 228px;
+          }
+          .inner-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 154px;
+            height: 154px;
+            background-color: variables.$highlighted-elements-color;
+            border: 2px solid variables.$body-primary-color;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@include mixins.responsive("xl-devices") {
+  .video-section {
+    .video-sec-wrapper {
+      .video-sec-left {
+        &::before,
+        &::after {
+          width: 115%;
+        }
+        &::after {
+          width: 120%;
+        }
+        .video-description {
+          padding: functions.rem(60) functions.rem(30);
+        }
+      }
+    }
+  }
+}
+@include mixins.responsive("lg-devices") {
+  .video-section {
+    .video-sec-wrapper {
+      display: block;
+      .video-sec-left {
+        width: 100%;
+        padding: functions.rem(100) functions.rem(36) 0 functions.rem(36);
+        background: linear-gradient(90deg, #305d52 1.26%, #153f38 100%);
+        &::before,
+        &::after {
+          height: 120%;
+          background-size: 100% auto;
+          background-position: bottom center;
+        }
+        &::before {
+          background-image: url("/assets/img/watchvid-design-1-md.svg");
+        }
+        &::after {
+          background-image: url("/assets/img/watchvid-design-2-md.svg");
+          height: 128%;
+        }
+        .video-description {
+          padding: functions.rem(20);
+        }
+      }
+      .video-sec-right {
+        width: 100%;
+        .video-thumbnail {
+          .outer-circle {
+            margin: 0 auto;
+            z-index: 36;
+          }
+          .logo-over-video-thumbnail {
+            right: 0;
+            left: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixins.responsive("sm-devices") {
+  .video-section {
+    .video-sec-wrapper {
+      .video-sec-left {
+        padding: functions.rem(80) functions.rem(16) 0 functions.rem(16);
+        &::before,
+        &::after {
+          height: 116%;
+          background-size: 100% auto;
+          background-position: bottom center;
+        }
+        &::before {
+          background-image: url("/assets/img/watchvid-design-1-sm.svg");
+        }
+        &::after {
+          background-image: url("/assets/img/watchvid-design-1-sm.svg");
+          height: 118%;
+        }
+        .video-description {
+          padding-bottom: functions.rem(30);
+          .transparent-text {
+            text-align: center;
+          }
+        }
+      }
+      .video-sec-right {
+        .video-thumbnail {
+          .outer-circle {
+            width: 128px;
+            height: 128px;
+            margin: functions.rem(45) auto 0 auto;
+            .inner-circle {
+              width: 99px;
+              height: 99px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
