@@ -7,7 +7,7 @@
   background: linear-gradient(180deg, #194d41 0%, rgba(25, 77, 65, 0.7) 100%), url("/dist/img/about-bg-img.png") no-repeat center center/cover;
   position: relative;
   .home {
-    padding: functions.rem(60) 0;
+    padding: functions.rem(120) 0 functions.rem(60);
     .home-left {
       .transparent-text {
         margin-bottom: functions.rem(20);
@@ -52,6 +52,7 @@
   .navigation-home {
     .home {
       text-align: center;
+      padding: functions.rem(180) 0 functions.rem(100) 0;
       .home-left {
         h1 {
           font-size: functions.rem(64);
@@ -66,6 +67,7 @@
 @include mixins.responsive("md-devices") {
   .navigation-home {
     .home {
+      padding: functions.rem(100) 0;
       .home-left {
         h1 {
           font-size: functions.rem(42);
@@ -75,4 +77,13 @@
   }
 }
 @include mixins.responsive("sm-devices") {
+  .navigation-home {
+    .home {
+      .home-left {
+        .transparent-text {
+          line-height: 48px;
+        }
+      }
+    }
+  }
 }
