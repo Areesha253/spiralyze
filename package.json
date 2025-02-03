@@ -26,6 +26,7 @@
     "gulp-imagemin": "^4.1.0",
     "imagemin-optipng": "^8.0.0",
     "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.3",
     "owl-carousel": "^1.0.0",
     "owl.carousel": "^2.3.4"
   }

@@ -1,3 +1,17 @@
+// const getUsersTemplate = (name, description) => `
+//   <div class="item">
+//     <div class="row">
+//       <div class="col-4">
+//         <img src="dist/img/testimonial-1.png" class="testimonial-img" alt="" />
+//       </div>
+//       <div class="col-12 col-sm-8">
+//         <div class="testimonial-card">
+//           <h4>${name}</h4>
+//           <h5>${description}</h5>
+//         </div>
+//       </div>
+//     </div>
+//   </div>`;
 $(".testimonial-carousel").owlCarousel({
   items: 1,
   nav: true,
@@ -38,3 +52,13 @@ $(".data-input").on("input", function () {
     $(this).closest(".input-field").removeClass("error");
   }
 });
+
+// async function getUsers() {
+//   const usersApiUrl = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const users = await response.json();
+//   console.log(users.name);
+//   const usersHtmlArr = users.map((user) => getUsersTemplate(user.name, user.company.catchPhrase)).join(" ");
+//   $(".testimonial-carousel").html(usersHtmlArr);
+
+//   testimonialCarousel();
+// }
