@@ -4,7 +4,10 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:db": "npx json-server db.json",
+    "start:server": "npx live-server --port=3001",
+    "start": "concurrently \"gulp\" \"npm run start:db\" \"npm run start:server\""
   },
   "keywords": [],
   "author": "",
@@ -15,19 +18,20 @@
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^6.0.0",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.83.0"
+    "imagemin-optipng": "^8.0.0",
+    "jquery": "^3.7.1",
+    "json-server": "^1.0.0-beta.3",
+    "live-server": "^1.2.2",
+    "sass": "^1.83.0",
+    "concurrently": "^9.1.2"
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "bootstrap": "^5.3.3",
-    "gulp-imagemin": "^4.1.0",
-    "imagemin-optipng": "^8.0.0",
-    "jquery": "^3.7.1",
-    "json-server": "^1.0.0-beta.3",
-    "owl-carousel": "^1.0.0",
     "owl.carousel": "^2.3.4"
   }
 }
