@@ -1,9 +1,62 @@
-@use "abstracts/functions";
 @use "abstracts/mixins";
+@use "abstracts/functions";
 @use "abstracts/variables";
-@use "base/typography";
 
-.contact-form {
+.user-data-form-heading {
+  font-family: "Montserrat-Bold";
+  font-weight: 900;
+  font-size: functions.rem(28);
+  color: variables.$interactive-elements-color;
+  margin: 20px 0;
+}
+.user-table {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .user-data-title {
+    pointer-events: none;
+    font-family: "Montserrat-Bold";
+    font-weight: 900;
+    padding: functions.rem(15);
+    font-size: functions.rem(18);
+    color: variables.$body-primary-color;
+    background-color: #2d7466;
+    border: 1px solid transparent;
+  }
+  .user-data {
+    padding: functions.rem(10) functions.rem(15);
+    pointer-events: none;
+    font-size: functions.rem(16);
+    color: variables.$main-text-color;
+    border: 1px solid variables.$interactive-elements-color;
+    .action-btns {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      pointer-events: auto;
+      .btn-edit {
+        color: #7c7927;
+        cursor: pointer;
+      }
+      .btn-delete {
+        color: #ff0000;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.edit-form {
+  display: none;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #2d7466;
+  width: 600px;
+  margin-right: auto;
+  h3 {
+    font-family: "Montserrat-Bold";
+    font-weight: 900;
+    font-size: functions.rem(22);
+    color: variables.$body-primary-color;
+    margin-bottom: functions.rem(20);
+  }
   .input-field {
     position: relative;
     input {
@@ -43,41 +96,6 @@
       pointer-events: none;
       transition: all 0.2s ease;
     }
-    .empty-field-warning {
-      color: variables.$body-primary-color;
-      font-size: 13px;
-      line-height: 20px;
-      padding: 10px;
-      position: absolute;
-      left: 0;
-      top: 120%;
-      width: 100%;
-      z-index: 10;
-      background: variables.$error-warning-color;
-      border-radius: 8px;
-      box-shadow: 0px 4px 8px 0px #00000014;
-      display: none;
-      &::before {
-        content: "";
-        background: url(/dist/img/red-pointer.png) no-repeat;
-        position: absolute;
-        top: -8px;
-        left: 47%;
-        width: 22px;
-        height: 9px;
-      }
-    }
-    &.error input {
-      border: 1px solid variables.$error-warning-color;
-    }
-    &.error label {
-      color: variables.$error-warning-color;
-    }
-    &.error input:focus + label,
-    &.error input:not(:placeholder-shown) + label {
-      background-color: #2d7466;
-      color: variables.$error-warning-color;
-    }
   }
   select {
     border-radius: 2px;
@@ -98,21 +116,19 @@
       color: variables.$main-text-color;
     }
   }
-  .submit-form-btn {
-    text-align: center;
+  .btn-update {
     box-shadow: 0px 4px 6px 0px #00000014;
     background-color: variables.$interactive-elements-color;
     border-radius: 4px;
     border: none;
-    display: flex;
-    align-items: center;
     padding: 16px;
-    width: 221px;
-    margin: 40px auto 0;
+    width: 220px;
     cursor: pointer;
-    gap: 10px;
+    display: flex;
     justify-content: center;
-    gap: 10px;
+    font-size: functions.rem(18);
+    color: variables.$body-primary-color;
+    margin: 20px auto 0;
     transition: transform 0.2s ease;
     &:hover {
       box-shadow: 0px 8px 6px 0px #00000014;
@@ -124,11 +140,22 @@
       transform: translateY(0);
       outline: none;
     }
-    span {
-      line-height: 21.94px;
-      font-weight: 600;
-      color: variables.$body-primary-color;
-      font-size: functions.rem(18);
+  }
+  .btn-cancel {
+    font-family: "Montserrat-Bold";
+    font-weight: 900;
+    margin: 20px 0 0;
+    border-radius: 4px;
+    border: none;
+    padding: 16px 0;
+    width: 220px;
+    font-size: functions.rem(18);
+    color: variables.$body-primary-color;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
