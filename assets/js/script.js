@@ -1,3 +1,12 @@
+var showToastAlert = (message, options = {}) => {
+  Toastify({
+    text: message,
+    duration: options.duration || 2000,
+    gravity: options.gravity || "top",
+    position: options.position || "left",
+    backgroundColor: options.backgroundColor || "green",
+  }).showToast();
+};
 var getTestimonialUsersTemplate = (name, description, img) => `
     <div class="item testimonial-item">
                 <div class="row">
@@ -88,7 +97,7 @@ $(".contact-form").on("submit", function (e) {
     data: JSON.stringify(value),
     success: () => {
       $(".data-input").val("");
-      alert("Form submitted successfully!");
+      showToastAlert("Form submitted successfully!");
       fetchUserDataIntoTable();
     },
     error: () => {
@@ -105,16 +114,16 @@ $(".data-input").on("input", function () {
 
 var userDataUrl = "http://localhost:3000/formData";
 
-var fetchUserDataIntoTable = async () => {
-  try {
-    var userData = await $.ajax({ url: userDataUrl });
-    var tableBody = $(".table-body").empty();
-    userData.forEach((user) => tableBody.append(userDataTemplate(user)));
-  } catch (error) {
-    console.error("Error fetching user data:", error);
-    alert("Failed to fetch user data.");
-  }
-};
+// var fetchUserDataIntoTable = async () => {
+//   try {
+//     var userData = await $.ajax({ url: userDataUrl });
+//     var tableBody = $(".table-body").empty();
+//     userData.forEach((user) => tableBody.append(userDataTemplate(user)));
+//   } catch (error) {
+//     console.error("Error fetching user data:", error);
+//     alert("Failed to fetch user data.");
+//   }
+// };
 
 $(".table-body").on("click", ".btn-edit, .btn-delete", function (e) {
   e.preventDefault();
