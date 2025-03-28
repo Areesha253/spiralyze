@@ -1,7 +1,7 @@
 var showToastAlert = (message, options = {}) => {
   Toastify({
     text: message,
-    duration: options.duration || 2000,
+    duration: options.duration || 3000,
     gravity: options.gravity || "top",
     position: options.position || "left",
     backgroundColor: options.backgroundColor || "green",
@@ -98,7 +98,7 @@ $(".contact-form").on("submit", function (e) {
     success: () => {
       $(".data-input").val("");
       showToastAlert("Form submitted successfully!");
-      fetchUserDataIntoTable();
+      // fetchUserDataIntoTable();
     },
     error: () => {
       alert("Error in form submission!");
