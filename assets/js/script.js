@@ -82,7 +82,7 @@ $(".contact-form").on("submit", function (e) {
   if (!formValid) return;
 
   $.ajax({
-    url: "http://localhost:3000/formData",
+    url: "https://formspree.io/f/mldjwjwr",
     method: "POST",
     contentType: "application/json",
     data: JSON.stringify(value),
