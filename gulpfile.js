@@ -20,6 +20,7 @@ const paths = {
       list: [
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
         "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css",
+        "node_modules/toastify-js/src/toastify.css",
         "node_modules/owl.carousel/dist/assets/owl.carousel.css",
         "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css",
       ],
@@ -33,6 +34,7 @@ const paths = {
         "node_modules/jquery/dist/jquery.min.js",
         "node_modules/owl.carousel/dist/owl.carousel.min.js",
         "node_modules/bootstrap/dist/js/bootstrap.js",
+        "node_modules/toastify-js/src/toastify.js",
         "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
         "node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js",
       ],
