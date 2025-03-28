@@ -172,6 +172,6 @@ $(".edit-data-form").on("submit", async function (e) {
   }
 });
 
-fetchUserDataIntoTable();
+// fetchUserDataIntoTable();
 
 Fancybox.bind("[data-fancybox]", {});
